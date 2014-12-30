@@ -319,18 +319,10 @@ var bind_link = function(form, name, prompt) {
   var show_tip  = function() {
     timeout = null;
 
-    var elem = link;
-    var x = y = 0;
-    while (elem) {
-      x += elem.offsetLeft;
-      y += elem.offsetTop;
-      elem = elem.offsetParent;
-    }
-
     tooltip.style.visibility = "visible";
     tooltip.style.zIndex = 1;
-    tooltip.style.left = x + 5;
-    tooltip.style.top = y + 10;
+    tooltip.style.left = 5;
+    tooltip.style.top = 10;
   }
 
   var hide_tip  = function() {
@@ -376,10 +368,14 @@ var the_form_html =
   "<form name=@NAME@>" +
   "<input type=hidden id=@NAME@.docid name=docid>" +
   "<input type=text name=label size=35 style='font-weight: bold'>" +
-  "<a class=missing target=@NAME@.puzzle id=@NAME@.puzzle>puzzle</a>" +
-  "<span class=tooltip><input type=text name=puzzle size=30></span>" +
-  "<a class=missing target=@NAME@.sheet id=@NAME@.sheet>sheet</a>" +
-  "<span class=tooltip><input type=text name=sheet size=30></span>" +
+  "<span class=tootltip_wrap>" +
+    "<a class=missing target=@NAME@.puzzle id=@NAME@.puzzle>puzzle</a>" +
+    "<span class=tooltip><input type=text name=puzzle size=30></span>" +
+  "</span>" +
+  "<span class=tootltip_wrap>" +
+    "<a class=missing target=@NAME@.sheet id=@NAME@.sheet>sheet</a>" +
+    "<span class=tooltip><input type=text name=sheet size=30></span>" +
+  "</span>" +
   "<input type=text name=status size=50>" +
   "<input type=text id=@NAME@.tags name=tags size=20>" +
   "<span style='cursor:pointer;cursor:hand;display:inline-block;width:2em' id=@NAME@.actives " +
