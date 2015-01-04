@@ -130,23 +130,22 @@ console.log("config is ", config);
       style="cursor: pointer; color: blue; text-decoration: underline; display: inline;" 
       onclick="document.getElementById('faq').style.display='inline';
                document.getElementById('showfaq').style.display='none';
-               document.getElementById('hidefaq').style.display='inline'">How Do I ...</span>
+               document.getElementById('hidefaq').style.display='inline'"><h2>How Do I ...</h2></span>
 <span id="hidefaq" 
       style="cursor: pointer; color: blue; text-decoration: underline; display: none;" 
       onclick="document.getElementById('faq').style.display='none';
                document.getElementById('showfaq').style.display='inline';
-               document.getElementById('hidefaq').style.display='none'">How Do I ...</span>
+               document.getElementById('hidefaq').style.display='none'"><h2>How Do I ...</h2></span>
 <span id="faq" style="display: none;">
 
 <DL>
-<DT><B>... get the grey buttons to stop saying "WhoRU?"</B></DT>
+<DT><B>... get the grey buttons to stop saying "Who are you?"</B></DT>
 <DD>
-  In the upper-left corner, under "Czar", there's a box where you can tell Czar who you are.
+  In the upper-left corner, there's a dropdown where you can tell Czar who you are. If you aren't listed, you need to <a href="who.html" target="_blank">add yourself on the Who page</a>.
   Every time you reload the page, you'll have to answer this question again.  Sorry about that.
-  You shouldn't need to reload the page most of the time; the data automatically refreshes.
-  (Also, when new puzzles arrive, the button will say "WhoRU?" until you change the contents
+  <span class="helptext">(Also, when new puzzles arrive, the button will say "WhoRU?" until you change the contents
   of that drop-down box.  This is a bug, but we left it in, either because we didn't have time
-  to fix it or because we didn't want y'all to jump on the new puzzles.)
+  to fix it or because we didn't want y'all to jump on the new puzzles.)</span>
 </DD>
 <DT><B>... get a list of unsolved puzzles?</B></DT>
 <DD>
@@ -161,17 +160,12 @@ console.log("config is ", config);
 </DD>
 <DT><B>... work on a new puzzle? ("new" as in it wasn't the last puzzle I was doing.)</B></DT>
 <DD>
-  First you need to deal with the last puzzle that you were working on (one of the three
-  cases below).  Then, click on the light-grey button that says "Do This" on the right 
-  side of a puzzle.  You'll be telling Czar that you're working on this puzzle, and leaving whatever
-  puzzle you were looking at.  Make sure you are communicating with the people who
-  are already working on the puzzle.
+  Click on the light-grey button that says "Do This" on the right 
+  side of a puzzle.  You'll be telling Czar that you're working on this puzzle, and leaving whatever puzzle you were looking at.  Make sure you are communicating with the people who are already working on the puzzle.
 </DD>
 <DT><B>... indicate that I've solved a puzzle?</B></DT>
 <DD>
-  Put the solution (if there is one) in the comment field, add your name(s) to it (so we can
-  come by and ask you how it worked if we need info for a meta), and add the "solved" tag to the
-  tags field.  Then you can move on to a new puzzle!
+  Put the solution (if there is one) in the comment field, add your name(s) to it (so we can come by and ask you how it worked if we need info for a meta), and add the "solved" tag to the tags field.  Sip a celebratory beverage and move on to a new puzzle!
 </DD>
 <DT><B>... indicate that we're not using the spreadsheet to solve the puzzle?</B></DT>
 <DD>
@@ -182,9 +176,7 @@ console.log("config is ", config);
 </DD>
 <DT><B>... leave a puzzle that I've made no progress on to work on a new puzzle?</B></DT>
 <DD>
-  Don't forget that "could not solve" is not the same as "no progress" -- if you've tried
-  things and didn't work, that's progress, and you should note it (see below).  But if you
-  really didn't do anything, just go to a new puzzle.
+  Don't forget that "could not solve" is not the same as "no progress" -- if you've tried things and didn't work, that's progress, and you should note it (see below).  But if you really didn't do anything, just go to a new puzzle.
 </DD>
 <DT><B>... leave a puzzle that I *have* made progress on to work on a new puzzle?</B></DT>
 <DD>
