@@ -75,31 +75,33 @@ console.log("config is ", config);
 </script>
 </head>
 
-<body onload="start_czar()">
+<body onload="start_czar('http://localhost:8888/')">
 <div id="globalWrapper">
 
-<img src=czar.jpeg style="float: left; margin-right: 10; margin-bottom: 15;">
-<div id=jobs style="float: right;"></div>
+<div id=jobs style="float: right;">
+  <div id="additional-state">
+    <!-- id is "aaaaa" to make it sort before most users.  -->
+    <span id='whoami.selector'>
+      <!-- The whoami select element gets auto-populated by XXX -->
+      Who are you? <select id="whoami">
+        <option id="whoami_sortkey_aaaaa" value="">Nobody</option>
+        <option id="whoami_sortkey_zzzzz" value="">Name not here?  Go to 'who'
+    and add yourself!</option>
+      </select>
+      <input type="text" style="display:none" id="whatamidoing">
+    </span>
+    <br>
+    <span id="mystatus"></span>
+    <br>
+    See also:
+    <a id="hunt_url" target="_blank" href="">Hunt Site</a> (<span id="hunt_info"></span>),
+    <a id="team_url" target="_blank" href="">Team site</a>, 
+    <a href="#showfaq">FAQ</a>
+  </div>
+</div>
 <div style="margin-left: 10">
-  <h2 style="margin-top: 0">Czar
-  <a style="font-size:50%" href="who.html" target="_blank">(Back to Who)</a>
-  </h2>
-  <!-- id is "aaaaa" to make it sort before most users.  --->
-  <span id='whoami.selector'>
-    <!-- The whoami select element gets auto-populated by XXX -->
-    Who are you? <select id="whoami">
-      <option id="whoami_sortkey_aaaaa" value="">Nobody</option>
-      <option id="whoami_sortkey_zzzzz" value="">Name not here?  Go to 'who'
-	and add yourself!</option>
-    </select>
-    <input type="text" style="display:none" id="whatamidoing">
-  </span>
-  <br>
-  <span id="mystatus"></span>
-  <br>
-  See also:
-  <a id="hunt_url" target="_blank" href="">Hunt Site</a> (<span id="hunt_info"></span>),
-  <a id="team_url" target="_blank" href="">Team site</a>
+  <h1 style="margin-top: 0">List of Things to Work On</h1>
+  <a href="who.html" target="_blank">(see Who Is Working On What)</a>
 </div>
 <br clear=left>
 
