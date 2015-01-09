@@ -78,8 +78,17 @@ console.log("config is ", config);
 <body onload="start_czar()">
 <div id="globalWrapper">
 
-<div id=jobs style="float: right;">
-  <div id="additional-state">
+<div id="rightside" style="float: right;">
+  <div id="jobs" style="float: right; margin-bottom: 10px;"></div>
+  <div id="seealso" style="clear: both;">
+  See also:
+      <a id="hunt_url" target="_blank" href="">Hunt Site</a> (<span id="hunt_info"></span>),
+      <a id="team_url" target="_blank" href="">Team site</a>, 
+      <a href="#showfaq">FAQ</a>
+  </div>
+</div>
+
+<div id="additional-state" style="float: right; border: 1px black solid; margin-right: 10px; padding: 10px;">
     <!-- id is "aaaaa" to make it sort before most users.  -->
     <span id='whoami.selector'>
       <!-- The whoami select element gets auto-populated by XXX -->
@@ -92,16 +101,11 @@ console.log("config is ", config);
     </span>
     <br>
     <span id="mystatus"></span>
-    <br>
-    See also:
-    <a id="hunt_url" target="_blank" href="">Hunt Site</a> (<span id="hunt_info"></span>),
-    <a id="team_url" target="_blank" href="">Team site</a>, 
-    <a href="#showfaq">FAQ</a>
-  </div>
 </div>
-<div style="margin-left: 10">
-  <h1 style="margin-top: 0">List of Things to Work On</h1>
-  <a href="who.html" target="_blank">(see Who Is Working On What)</a>
+
+<div style="margin-left: 10; white-space: nowrap">
+  <h1 style="margin-top: 0; margin-bottom: 10px">List of Puzzles</h1>
+  <a href="who.html" target="_blank">(see Who's Doing What)</a>
 </div>
 <br clear=left>
 
