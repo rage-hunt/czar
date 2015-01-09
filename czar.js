@@ -14,7 +14,6 @@ var synthesize_change_event = function(element) {
   if ("createEvent" in document) {
     var evt = document.createEvent("HTMLEvents");
     evt.initEvent("change", false, true);
-    console.log("element is ", element, "; de is ", element.dispatchEvent);
     element.dispatchEvent(evt);
   } else {
     element.fireEvent("onchange");
