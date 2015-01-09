@@ -4,7 +4,7 @@
 <style>
 
 body { margin: 0px; background: #FFFFFF; color: #000000; font: 100% sans-serif; }
-div#globalWrapper { margin: 8px; }
+div#globalPadding { padding: 8px; }
 div.internal { display: none; }
 
 form a { font-size: 80%; margin-right: 10px; }
@@ -76,7 +76,8 @@ console.log("config is ", config);
 </head>
 
 <body onload="start_czar()">
-<div id="globalWrapper">
+<div id="globalWrapper" style="width: 100%">
+<div id="globalPadding">
 
 <div id="rightside" style="float: right;">
   <div id="jobs" style="float: right; margin-bottom: 10px;"></div>
@@ -88,7 +89,7 @@ console.log("config is ", config);
   </div>
 </div>
 
-<div id="additional-state" style="float: right; border: 1px black solid; margin-right: 10px; padding: 10px;">
+<div id="additional-state" style="float: right; border: 1px black solid; margin-right: 45px; padding: 10px; width: 475px;">
     <!-- id is "aaaaa" to make it sort before most users.  -->
     <span id='whoami.selector'>
       <!-- The whoami select element gets auto-populated by XXX -->
@@ -215,6 +216,7 @@ console.log("config is ", config);
 </DD>
 </span>
 
+</div>
 </div>
 </body>
 </html>

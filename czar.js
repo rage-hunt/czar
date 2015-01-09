@@ -522,10 +522,8 @@ var UpdateMyStatus = function() {
       }
     } else {
       mystatus.innerHTML += '<b><font color="red">You are not assigned to ' +
-        'an activity!  Please select a puzzle below or select an exclusive ' +
-        'non-puzzle activity on <a href="who.html">Who</a>.<br>Consult with ' +
-        'your local Puzzle Czar if you are unsure what you should be doing.' +
-        '</font></b><br>';
+        'a puzzle! Please select a puzzle below, or select some other ' +
+        'activity on <a href="who.html">Who</a>.</font></b><br>';
     }
     if (job) {
       mystatus.innerHTML += "Current job: <b>" + job + "</b><br>";
