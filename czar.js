@@ -599,13 +599,13 @@ var MakeJobForm = function(job_id, job_name) {
       jobbutton.style.backgroundColor = "#C3F";
       jobbutton.style.color = "#000";      
     }
-    jobbutton.value = "Stop";
+    jobbutton.value = "Stop doing this job";
     jobbutton.title = "Click here to indicate that you are leaving this job.";
   } else {
     // not engaged == "gray" on who
     jobbutton.style.backgroundColor = "#EEE";
     jobbutton.style.color = "#000";
-    jobbutton.value = "Start";
+    jobbutton.value = "Start doing this job";
     jobbutton.title = "Click here to indicate you are starting this job.";
   }
   var form = tmp.firstChild;
