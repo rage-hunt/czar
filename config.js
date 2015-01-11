@@ -8,7 +8,8 @@ var localhost_config = {
   hunt_url: "http://en.wikipedia.org/wiki/Puzzlehunt",
   hunt_info: "no login necessary",
   team_url: "http://en.wikipedia.org/wiki/Team",
-  js_inject: "http://localhost.rotq.net:5000/static/loadstub.js",
+  js_inject: "http://localhost.rotq.net:5000/static/loadstub.js?v=1",
+  script_version_magic: "1",
 };
 
 // Configuration for Team Rage, MIT Mystery Hunt 2015.
@@ -21,7 +22,8 @@ var rage15_config = {
   hunt_url: "http://example.com/",
   hunt_info: "user:rage pass:ireproof",
   team_url: "http://rotq.net/",
-  js_inject: "http://scripts.rotq.net/static/loadstub.js",
+  js_inject: "http://scripts.rotq.net/static/loadstub.js?v=1",
+  script_version_magic: "1",
 };
 
 // Modify this to use a different config.
