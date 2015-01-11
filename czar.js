@@ -658,6 +658,20 @@ var UpdateActives = function(name) {
 var WhoAmIChanged = function() {
   // Store this user identity in a cookie.
   var whoami = document.getElementById('whoami');
+
+  // XXX: Magic value to indicate 'need to add a user'
+  if (whoami.value == "__MISSINGNO__") {
+    var name = prompt("Please enter the new name / username. (Double-check first that it's not already there!)", "");
+    if (name) {
+      InternalAddPerson(-1, name);
+      // XXX; Wait "a while".
+      setTimeout(function() {
+        $('#whoami option').filter(function () { return $(this).html() == name; }).prop('selected', true);
+        synthesize_change_event(whoami);
+      }, 250);
+    }
+    return;
+  }
   var uid = document.getElementById('whoami').options[whoami.selectedIndex].value;
   cookies.set('whoami', uid);
 
