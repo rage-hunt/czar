@@ -10,6 +10,8 @@ var localhost_config = {
   team_url: "http://en.wikipedia.org/wiki/Team",
   js_inject: "http://localhost.rotq.net:5000/static/loadstub.js?v=1",
   script_version_magic: "1",
+  chat_static_url: "http://scripts.localhost.rotq.net:5000/",
+  chat_longpoll_domain: "localhost.rotq.net:5000",
 };
 
 // Configuration for Team Rage, MIT Mystery Hunt 2015.
@@ -24,6 +26,8 @@ var rage15_config = {
   team_url: "http://rotq.net/",
   js_inject: "http://scripts.rotq.net/static/loadstub.js?v=1",
   script_version_magic: "1",
+  chat_static_url: "http://scripts.x.rotq.net/",
+  chat_longpoll_domain: "x.rotq.net",
 };
 
 // Modify this to use a different config.
