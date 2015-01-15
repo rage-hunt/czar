@@ -655,20 +655,43 @@ var UpdateActives = function(name) {
   }
 };
 
-var WhoAmIChanged = function() {
+var FindOption = function(user) {
+  return jQuery('#whoami option').filter(function () { return $(this).html() == user; })
+}
+
+var WhoAmIChanged = function(e) {
   // Store this user identity in a cookie.
   var whoami = document.getElementById('whoami');
 
   // XXX: Magic value to indicate 'need to add a user'
   if (whoami.value == "__MISSINGNO__") {
+    // No matter what, put us back on a reasonable value first. Do not allow this value to stay selected.
+    FindOption('Nobody').prop('selected', true);
+    e.stopImmediatePropagation();
+
     var name = prompt("Please enter the new name / username. (Double-check first that it's not already there!)", "");
     if (name) {
+      if (FindOption(name).length) {
+        // User already exists.
+        FindOption(name).prop('selected', true);
+        synthesize_change_event(whoami);
+        return;
+      }
       InternalAddPerson(-1, name);
       // XXX; Wait "a while".
-      setTimeout(function() {
-        $('#whoami option').filter(function () { return $(this).html() == name; }).prop('selected', true);
-        synthesize_change_event(whoami);
-      }, 250);
+      var tries = 5;
+      var try_set_name = function() {
+        var o = FindOption(name);
+        console.log("Trying to set name to", name, "; found option", o);
+        if (o.length) {
+          o.prop('selected', true);
+          synthesize_change_event(whoami);
+        } else if (tries) {
+          tries--;
+          setTimeout(try_set_name, 250);
+        }
+      };
+      setTimeout(try_set_name, 0);
     }
     return;
   }
