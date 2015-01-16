@@ -121,6 +121,7 @@ var gLastSeenTime = {};
 
 
 var HandleUpdateFromStateserver = function(key, value) {
+  $('#czar_connect_warning').hide();
   log('From stateserver: [' + key + '] = [' + value + ']');
 
   // p####.field................ Puzzle.
