@@ -75,21 +75,36 @@ function createSpreadsheet(title, callback) {
     return false;
   }
   gapi.client.load('drive', 'v2', function() {
-    var request = gapi.client.request({
-      'path': '/drive/v2/files',
-      'method': 'POST',
-      'body': {
-        'title': title,
-        'mimeType':'application/vnd.google-apps.spreadsheet',
-        'parents': [{"id": config.doc_folder_id}],
-      }
-    });
+    var request;
+    if (config.doc_clonefrom_id) {
+      request = gapi.client.request({
+        'path': '/drive/v2/files/' + config.doc_clonefrom_id + '/copy',
+        'method': 'POST',
+        'body': {
+          'title': title,
+          'mimeType':'application/vnd.google-apps.spreadsheet',
+          'parents': [{"id": config.doc_folder_id}],
+        }
+      });
+    } else {
+      request = gapi.client.request({
+        'path': '/drive/v2/files',
+        'method': 'POST',
+        'body': {
+          'title': title,
+          'mimeType':'application/vnd.google-apps.spreadsheet',
+          'parents': [{"id": config.doc_folder_id}],
+        }
+      });
+    }
+
     request.execute(function(resp) {
       if (!resp.error) {
         if (debug) console.log('Created spreadsheet: ' + title);
         callback(resp.id, resp.alternateLink);
       } else {
-        alert('Spreadsheet not created!\nError ' + resp.error.code + ': ' + resp.error.message);
+        alert('Spreadsheet not created! Try refreshing the page. \nError ' + resp.error.code + ': ' + resp.error.message);
+        return false;
       }
     });
   });
