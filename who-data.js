@@ -81,7 +81,7 @@ var UpdateAssignment = function(user, activity, when, active, exclusive) {
 var User = function(id, name) {
   if (id < 0) {
     // Generate a new ID.
-    do id = "u" + Math.floor(Math.random() * 10000);
+    do id = "u" + Math.floor(Math.random() * 1000000);
     while (gUsers[id]);
   }
   this.id = id;
@@ -91,7 +91,7 @@ var User = function(id, name) {
 var Activity = function(id, name) {
   if (id < 0) {
     // Generate a new ID.
-    do id = "a" + Math.floor(Math.random() * 10000);
+    do id = "a" + Math.floor(Math.random() * 1000000);
     while (gActivities[id]);
   }
   this.id = id;

@@ -165,7 +165,7 @@ var on_submit_create = function() {
     if (label) {
       var name = null;
       // p is for puzzle.
-      do name = "p" + Math.floor(Math.random() * 10000);
+      do name = "p" + Math.floor(Math.random() * 1000000);
       while (document.forms[name]);
 
       if (createSpreadsheet(label, function(id, url) {
