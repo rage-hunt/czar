@@ -57,7 +57,7 @@ function checkFolderAccess(silent) {
 function handleLoggedIn() {
   logged_in = true;
   document.forms.create.style.display = "inline";
-  bind_input(document.forms.create.label, "Click to enter new puzzle name");
+  bind_input(document.forms.create.label, "Click to enter new puzzle name (REFRESH PAGE FIRST)");
   document.forms.create.label.czar_autosubmit = false;
   document.forms.create.onsubmit = on_submit_create;
   document.getElementById("auth_button").style.display = "none";
