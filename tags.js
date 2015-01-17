@@ -74,7 +74,7 @@ var TagsMatch = function(selected, taglist) {
     if (selected.tags[tags[i]]) {
       num_tags_match++;
     }
-    if (tags[i] == 'solved') {
+    if (tags[i] == 'solved' || tags[i] == 'hide') {
       unsolved = false;
     }
   }
